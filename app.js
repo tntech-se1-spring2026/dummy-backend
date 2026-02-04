@@ -38,12 +38,12 @@ app.get("/web/nodes", (req, res) => {
 });
 
 app.get("/web/node", (req, res) => {
-  if (!req.query) {
+  if (!req.query.node) {
     res.send("No specified nodeid", 400);
     return;
   }
 
-  if (req.query == "node003") {
+  if (req.query.node == "node003") {
     res.send("node003 not found", 404);
     return;
   }
@@ -51,9 +51,9 @@ app.get("/web/node", (req, res) => {
   const status = Math.random() < 0.2 ? "inactive" : "active";
 
   const nodeText = `{
-      "id": "${req.query}",
+      "id": "${req.query.node}",
       "status": "${status}",
-    },`;
+    }`;
 
   res.send(nodeText, 200);
 });
