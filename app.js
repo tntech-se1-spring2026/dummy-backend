@@ -16,25 +16,29 @@ app.get("/web/nodes", (req, res) => {
   const nodeText = `{
     "nodes": [
       {
-        "id": node001,
-        "status": "active",
+        "id": "node001",
+        "status": "active"
       },
       {
-        "id": node002,
-        "status": "active",
+        "id": "node002",
+        "status": "active"
       },
       {
-        "id": node003,
-        "status": "inactive",
+        "id": "node003",
+        "status": "inactive"
       },
       {
-        "id": node004,
-        "status": "active",
-      },
+        "id": "node004",
+        "status": "active"
+      }
     ]
   }`;
 
-  res.send(nodeText);
+  console.log(`Sending: \n ${nodeText}`);
+
+  nodeJSON = JSON.parse(nodeText);
+
+  res.json(nodeJSON);
 });
 
 app.get("/web/node", (req, res) => {
@@ -51,11 +55,15 @@ app.get("/web/node", (req, res) => {
   const status = Math.random() < 0.2 ? "inactive" : "active";
 
   const nodeText = `{
-      "id": "${req.query.node}",
-      "status": "${status}",
-    }`;
+    "id": "${req.query.node}",
+    "status": "${status}"
+  }`;
 
-  res.send(nodeText, 200);
+  console.log(`Sending: \n ${nodeText}`);
+
+  const nodeJSON = JSON.parse(nodeText);
+
+  res.json(nodeJSON, 200);
 });
 
 /////   POST METHODS    /////
