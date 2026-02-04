@@ -68,8 +68,6 @@ app.get("/web/node", (req, res) => {
 // none yet
 
 /////   START SERVICE    /////
-// none yet
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
