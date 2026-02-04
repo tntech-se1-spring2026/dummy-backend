@@ -1,0 +1,75 @@
+const express = require("express");
+const app = express();
+const port = 3000;
+
+/////   GET METHODS    /////
+
+app.get("/", (req, res) => {
+  res.send("This endpoint serves 'index.html'");
+});
+
+app.get("/web/ping", (req, res) => {
+  res.send("pong");
+});
+
+app.get("/web/nodes", (req, res) => {
+  const nodeText = `{
+    "nodes": [
+      {
+        "id": node001,
+        "status": "active",
+      },
+      {
+        "id": node002,
+        "status": "active",
+      },
+      {
+        "id": node003,
+        "status": "inactive",
+      },
+      {
+        "id": node004,
+        "status": "active",
+      },
+    ]
+  }`;
+
+  res.send(nodeText);
+});
+
+app.get("/web/node", (req, res) => {
+  if (!req.query) {
+    res.send("No specified nodeid", 400);
+    return;
+  }
+
+  if (req.query == "node003") {
+    res.send("node003 not found", 404);
+    return;
+  }
+
+  const status = Math.random() < 0.2 ? "inactive" : "active";
+
+  const nodeText = `{
+      "id": "${req.query}",
+      "status": "${status}",
+    },`;
+
+  res.send(nodeText, 200);
+});
+
+/////   POST METHODS    /////
+// none yet
+
+/////   PUT METHODS    /////
+// none yet
+
+/////   DELETE METHODS    /////
+// none yet
+
+/////   START SERVICE    /////
+// none yet
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
