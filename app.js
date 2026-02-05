@@ -20,19 +20,19 @@ app.get("/web/nodes", (req, res) => {
     "nodes": [
       {
         "id": "node001",
-        "status": "active"
+        "status": "online"
       },
       {
         "id": "node002",
-        "status": "active"
+        "status": "online"
       },
       {
         "id": "node003",
-        "status": "inactive"
+        "status": "offline"
       },
       {
         "id": "node004",
-        "status": "active"
+        "status": "online"
       }
     ]
   }`;
@@ -55,7 +55,7 @@ app.get("/web/node", (req, res) => {
     return;
   }
 
-  const status = Math.random() < 0.2 ? "inactive" : "active";
+  const status = Math.random() < 0.2 ? "offline" : "online";
 
   const nodeText = `{
     "id": "${req.query.id}",
