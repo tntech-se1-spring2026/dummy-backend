@@ -24,4 +24,15 @@ Run this backend with `node app.js`.
   - Status: 200
   - Request:
     - Required: query string specifying node id
-  - Response: `application/json` _A json object detailing specified node_
+  - Response: `application/json` _A JSON object detailing specified node_
+
+- `/web/alerts`
+  - Status: 200
+  - Response: `application/json` _A JSON array containing all alerts_
+
+- `/web/alert?id={alert id}`
+  - Status: 200
+  - Request:
+    - Required: query string specifying alert id
+  - Response: `application/json` _A JSON object detailing specified alert_
+
