@@ -20,19 +20,19 @@ app.get("/web/nodes", (req, res) => {
     "nodes": [
       {
         "id": "node001",
-        "status": "online"
+        "last_seen": "3456789"
       },
       {
         "id": "node002",
-        "status": "online"
+        "last_seen": "3456746"
       },
       {
         "id": "node003",
-        "status": "offline"
+        "last_seen": "4386952"
       },
       {
         "id": "node004",
-        "status": "online"
+        "last_seen": "6538205"
       }
     ]
   }`;
