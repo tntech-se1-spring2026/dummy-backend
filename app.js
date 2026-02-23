@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = 3000;
+const expressWs = require('express-ws')(app);
 
 app.use(cors());
 
@@ -77,6 +78,16 @@ app.get("/web/node", (req, res) => {
 
 /////   DELETE METHODS    /////
 // none yet
+
+/////    WEBSOCKETS    /////
+app.ws('/ws/echo', function(ws, req) {
+  ws.on('open', function(msg) {
+    ws.send("Connection Established");
+  });
+  ws.on('message', function(msg) {
+    ws.send(msg);
+  });
+});
 
 /////   START SERVICE    /////
 app.listen(port, () => {
