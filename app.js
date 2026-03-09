@@ -21,10 +21,11 @@ app.get("/web/nodes", (req, res) => {
   {
     "id": 0,
     "name": "Viewing Node",
-    "type": "sensor",
+    "type": "viewing",
     "status": "Online",
+    "lastSeen": 10000,
     "sensors": [
-      { "type": "battery", "value": 97.12 }
+      { "type": "battery", "value": 97 }
     ]
   },
   {
@@ -32,8 +33,9 @@ app.get("/web/nodes", (req, res) => {
     "name": "Front Gate",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 11000,
     "sensors": [
-      { "type": "battery", "value": 97.12 },
+      { "type": "battery", "value": 97 },
       { "type": "door", "value": "Open" }
     ]
   },
@@ -42,8 +44,9 @@ app.get("/web/nodes", (req, res) => {
     "name": "Back Gate",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 10000,
     "sensors": [
-      { "type": "battery", "value": 87.12 },
+      { "type": "battery", "value": 87 },
       { "type": "door", "value": "Closed" }
     ]
   },{
@@ -51,8 +54,9 @@ app.get("/web/nodes", (req, res) => {
     "name": "Barn Door 1",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 10000,
     "sensors": [
-      { "type": "battery", "value": 39.95 },
+      { "type": "battery", "value": 39 },
       { "type": "door", "value": "Open" }
     ]
   },{
@@ -60,53 +64,59 @@ app.get("/web/nodes", (req, res) => {
     "name": "Barn Door 2",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 9000,
     "sensors": [
-      { "type": "battery", "value": 100.00 },
+      { "type": "battery", "value": 100 },
       { "type": "door", "value": "Closed" }
     ]
   },{
     "id": 5,
-    "name": "Cave Entrance",
+    "name": "Barn Door 3",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 9500,
     "sensors": [
-      { "type": "battery", "value": 60.01 },
+      { "type": "battery", "value": 60 },
       { "type": "door", "value": "Closed" }
     ]
   },{
     "id": 6,
-    "name": "Secret Door",
+    "name": "Front Door",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 12000,
     "sensors": [
-      { "type": "battery", "value": 33.95 },
+      { "type": "battery", "value": 33 },
       { "type": "door", "value": "Closed" }
     ]
   },{
     "id": 7,
-    "name": "Bat Cave",
+    "name": "Back Door",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 11000,
     "sensors": [
-      { "type": "battery", "value": 53.95 },
+      { "type": "battery", "value": 53 },
       { "type": "door", "value": "Closed" }
     ]
   },{
     "id": 8,
-    "name": "Trapdoor",
+    "name": "Water Door",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 11000,
     "sensors": [
-      { "type": "battery", "value": 30.95 },
+      { "type": "battery", "value": 30 },
       { "type": "door", "value": "Closed" }
     ]
   },{
     "id": 9,
-    "name": "Reliquary Tower",
+    "name": "Shed Door",
     "type": "sensor",
     "status": "Online",
+    "lastSeen": 11000,
     "sensors": [
-      { "type": "battery", "value": 80.95 },
+      { "type": "battery", "value": 80 },
       { "type": "door", "value": "Open" }
     ]
   }
@@ -135,7 +145,7 @@ app.get("/web/alerts", (req, res) => {
   },
   {
     "id": 9,
-    "name": "Reliquary Tower",
+    "name": "Shed Door",
     "time": 154800,
     "reasons": ["Door Opened", "Low Battery"]
   }
