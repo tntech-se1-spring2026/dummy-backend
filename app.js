@@ -20,7 +20,7 @@ app.get("/web/nodes", (req, res) => {
   const nodeText = `[
   {
     "id": 0,
-    "name": "Viewing Node",
+    "name": "Viewer",
     "type": "viewing",
     "status": "Online",
     "lastSeen": 10000,
